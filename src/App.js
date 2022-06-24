@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './components/Card';
 import Form from './components/Form';
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
 
     return (
       <div>
+        <h1>Tryunfo</h1>
         <Form
           cardName=""
           cardDescription=""
@@ -21,10 +23,20 @@ class App extends React.Component {
           cardAttr3=""
           cardImage=""
           cardRare=""
-          cardTrunfo="false"
+          cardTrunfo={ false }
           onInputChange={ onInputChange }
-          isSaveButtonDisabled="false"
+          isSaveButtonDisabled={ false }
           onSaveButtonClick={ onSaveButtonClick }
+        />
+        <Card
+          cardName=""
+          cardImage=""
+          cardDescription=""
+          cardAttr1=""
+          cardAttr2=""
+          cardAttr3=""
+          cardRare=""
+          cardTrunfo={ false }
         />
       </div>
     );
