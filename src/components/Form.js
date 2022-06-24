@@ -2,18 +2,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 export default class Form extends Component {
-  // constructor() {
-  //   super();
-
-  //   this.state = {
-  //     name: '',
-  //   };
-  // }
-
-  // onInputChange = (event) => {
-  //   this.setState({ name: event.target.value });
-  // }
-
   render() {
     const { cardName,
       cardDescription,
@@ -23,6 +11,9 @@ export default class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      onInputChange,
+      onSaveButtonClick,
+      isSaveButtonDisabled,
     } = this.props;
 
     return (
@@ -34,7 +25,7 @@ export default class Form extends Component {
             data-testid="name-input"
             name="name"
             value={ cardName }
-            onChange={ this.onInputChange }
+            onChange={ onInputChange }
           />
         </label>
 
@@ -139,7 +130,7 @@ Form.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // isSaveButtonDisabled: PropTypes.bool.isRequired,
-  // onInputChange: PropTypes.func.isRequired,
-  // onSaveButtonClick: PropTypes.func.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
 };
