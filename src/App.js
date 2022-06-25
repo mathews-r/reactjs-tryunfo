@@ -16,6 +16,7 @@ class App extends React.Component {
       cardRare: '',
       isSaveButtonDisabled: true,
       cardTrunfo: false,
+      cards: [],
     };
   }
 
@@ -60,8 +61,19 @@ class App extends React.Component {
       this.verifyButton);
     };
 
-    const onSaveButtonClick = () => {
-      console.log('funcionou');
+    const onSaveButtonClick = (event) => {
+      event.preventDefault();
+      const { cards } = this.state;
+      this.setState((prevState) => ({
+        cardName: '',
+        cardDescription: '',
+        cardImage: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardRare: '',
+        cardTrunfo: false,
+        cards: [...prevState.cards, cards] }));
     };
 
     return (
