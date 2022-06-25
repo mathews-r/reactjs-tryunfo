@@ -17,9 +17,9 @@ export default class Form extends Component {
     } = this.props;
 
     return (
-      <>
+      <form className="form">
         <label htmlFor="name">
-          Nome
+          Insira o nome da carta:
           <input
             type="text"
             data-testid="name-input"
@@ -30,7 +30,7 @@ export default class Form extends Component {
         </label>
 
         <label htmlFor="description">
-          Descrição
+          Descrição:
           <textarea
             data-testid="description-input"
             name="cardDescription"
@@ -40,21 +40,25 @@ export default class Form extends Component {
         </label>
 
         <label htmlFor="attr1">
-          Atributo 1
+          Força:
           <input
             type="number"
             data-testid="attr1-input"
             name="cardAttr1"
+            min="0"
+            max="90"
             value={ cardAttr1 }
             onChange={ onInputChange }
           />
         </label>
 
         <label htmlFor="attr2">
-          Atributo 2
+          Inteligência:
           <input
             type="number"
             data-testid="attr2-input"
+            min="0"
+            max="90"
             name="cardAttr2"
             value={ cardAttr2 }
             onChange={ onInputChange }
@@ -62,9 +66,11 @@ export default class Form extends Component {
         </label>
 
         <label htmlFor="attr3">
-          Atributo 3
+          Agilidade:
           <input
             type="number"
+            min="0"
+            max="90"
             data-testid="attr3-input"
             name="cardAttr3"
             value={ cardAttr3 }
@@ -73,7 +79,7 @@ export default class Form extends Component {
         </label>
 
         <label htmlFor="image">
-          Imagem
+          Imagem:
           <input
             type="text"
             data-testid="image-input"
@@ -116,7 +122,7 @@ export default class Form extends Component {
         >
           Salvar
         </button>
-      </>
+      </form>
     );
   }
 }
