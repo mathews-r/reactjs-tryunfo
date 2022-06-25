@@ -24,7 +24,6 @@ class App extends React.Component {
       cardDescription,
       cardImage,
       cardRare,
-      // isSaveButtonDisabled,
     } = this.state;
 
     if (cardName && cardDescription && cardImage && cardRare) {
@@ -48,6 +47,9 @@ class App extends React.Component {
       this.setState({ [event.target.name]:
         event.target.type === 'checkbox'
           ? event.target.checked : event.target.value });
+
+      this.setState(() => ({ isSaveButtonDisabled: event.target.value }),
+        this.verifyButton);
     };
 
     const onSaveButtonClick = () => {
