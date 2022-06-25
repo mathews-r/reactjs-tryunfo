@@ -37,7 +37,6 @@ class App extends React.Component {
     const valueAttr2 = Number(cardAttr2) >= 0 && Number(cardAttr2) <= maxValue;
     const valueAttr3 = Number(cardAttr3) >= 0 && Number(cardAttr3) <= maxValue;
     const sumAttrs = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= maxSum;
-    // const soma = (Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= maxValue);
 
     this.setState({ isSaveButtonDisabled:
       !(emptyInputs && valueAttr1 && valueAttr2 && valueAttr3 && sumAttrs) });
@@ -57,8 +56,8 @@ class App extends React.Component {
 
     const onInputChange = (event) => {
       this.setState(({ [event.target.name]:
-        event.target.type === 'checkbox'
-          ? event.target.checked : event.target.value }), this.verifyButton);
+        event.target.type === 'checkbox' ? event.target.checked : event.target.value }),
+      this.verifyButton);
     };
 
     const onSaveButtonClick = () => {

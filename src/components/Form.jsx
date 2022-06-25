@@ -105,7 +105,7 @@ export default class Form extends Component {
           <input
             type="checkbox"
             data-testid="trunfo-input"
-            name="check-box"
+            name="cardTrunfo"
             checked={ cardTrunfo }
             onChange={ onInputChange }
           />
