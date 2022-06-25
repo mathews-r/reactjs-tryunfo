@@ -24,11 +24,23 @@ class App extends React.Component {
       cardDescription,
       cardImage,
       cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
     } = this.state;
 
-    if (cardName && cardDescription && cardImage && cardRare) {
-      this.setState({ isSaveButtonDisabled: false });
-    }
+    const maxSum = 210;
+    const maxValue = 90;
+
+    const emptyInputs = cardName && cardDescription && cardImage && cardRare;
+    const valueAttr1 = Number(cardAttr1) >= 0 && Number(cardAttr1) <= maxValue;
+    const valueAttr2 = Number(cardAttr2) >= 0 && Number(cardAttr2) <= maxValue;
+    const valueAttr3 = Number(cardAttr3) >= 0 && Number(cardAttr3) <= maxValue;
+    const sumAttrs = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= maxSum;
+    // const soma = (Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= maxValue);
+
+    this.setState({ isSaveButtonDisabled:
+      !(emptyInputs && valueAttr1 && valueAttr2 && valueAttr3 && sumAttrs) });
   };
 
   render() {
@@ -44,12 +56,9 @@ class App extends React.Component {
     } = this.state;
 
     const onInputChange = (event) => {
-      this.setState({ [event.target.name]:
+      this.setState(({ [event.target.name]:
         event.target.type === 'checkbox'
-          ? event.target.checked : event.target.value });
-
-      this.setState(() => ({ isSaveButtonDisabled: event.target.value }),
-        this.verifyButton);
+          ? event.target.checked : event.target.value }), this.verifyButton);
     };
 
     const onSaveButtonClick = () => {
