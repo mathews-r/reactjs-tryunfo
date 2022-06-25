@@ -23,7 +23,7 @@ export default class Form extends Component {
           <input
             type="text"
             data-testid="name-input"
-            name="name"
+            name="cardName"
             value={ cardName }
             onChange={ onInputChange }
           />
@@ -33,7 +33,7 @@ export default class Form extends Component {
           Descrição
           <textarea
             data-testid="description-input"
-            name="description"
+            name="cardDescription"
             value={ cardDescription }
             onChange={ onInputChange }
           />
@@ -44,7 +44,7 @@ export default class Form extends Component {
           <input
             type="number"
             data-testid="attr1-input"
-            name="attr1"
+            name="cardAttr1"
             value={ cardAttr1 }
             onChange={ onInputChange }
           />
@@ -55,7 +55,7 @@ export default class Form extends Component {
           <input
             type="number"
             data-testid="attr2-input"
-            name="attr2"
+            name="cardAttr2"
             value={ cardAttr2 }
             onChange={ onInputChange }
           />
@@ -66,7 +66,7 @@ export default class Form extends Component {
           <input
             type="number"
             data-testid="attr3-input"
-            name="attr3"
+            name="cardAttr3"
             value={ cardAttr3 }
             onChange={ onInputChange }
           />
@@ -77,7 +77,7 @@ export default class Form extends Component {
           <input
             type="text"
             data-testid="image-input"
-            name="image"
+            name="cardImage"
             value={ cardImage }
             onChange={ onInputChange }
           />
@@ -87,7 +87,7 @@ export default class Form extends Component {
           Raridade
           <select
             data-testid="rare-input"
-            name="input-rare"
+            name="cardRare"
             value={ cardRare }
             onChange={ onInputChange }
           >
