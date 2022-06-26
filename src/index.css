@@ -1,13 +1,141 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+  padding: 0;  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: #3D94F6;
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 6px;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.div-card {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  text-align: center;
+  padding: 5px;
+}
+
+.input-text {
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 10px;
+  height: 4px;
+  margin: 5px
+  }
+
+.btn-submit {
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+    color: #3D94F6;
+    height: 21px;
+    width: 80px;
+    font-family: Open Sans;
+    font-weight: 700;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-preview {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+#text-area {
+    height: 50px;
+}
+
+.select {
+    width: 203px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.super-trunfo {
+    margin-right: 101px;
+}
+
+.div-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.div-btn:hover {
+    opacity: 0.8;
+}
+
+.name-photo {
+  width: 230px;
+  height: 240px;
+  border: 1px solid white;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.photo-card {
+  width: 215px;
+  height: 200px;
+  border-radius: 6px;
+}
+
+.attrs {
+  width: 230px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 5px;
+}
+
+.atributo {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+.div-desc {
+  border: 1px solid white;
+  width: 220px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 6px;
 }

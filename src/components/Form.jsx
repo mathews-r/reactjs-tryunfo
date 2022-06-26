@@ -14,13 +14,15 @@ export default class Form extends Component {
       onInputChange,
       onSaveButtonClick,
       isSaveButtonDisabled,
+      hastrunfo,
     } = this.props;
 
     return (
       <form className="form">
-        <label htmlFor="name">
-          Insira o nome da carta:
+        <label className="labels" htmlFor="name">
+          INSIRA O NOME DA CARTA:
           <input
+            className="input-text"
             type="text"
             data-testid="name-input"
             name="cardName"
@@ -29,9 +31,11 @@ export default class Form extends Component {
           />
         </label>
 
-        <label htmlFor="description">
-          Descrição:
+        <label className="labels" htmlFor="description">
+          DESCRIÇÃO:
           <textarea
+            id="text-area"
+            className="input-text"
             data-testid="description-input"
             name="cardDescription"
             value={ cardDescription }
@@ -39,9 +43,10 @@ export default class Form extends Component {
           />
         </label>
 
-        <label htmlFor="attr1">
-          Força:
+        <label className="labels" htmlFor="attr1">
+          FORÇA:
           <input
+            className="input-text"
             type="number"
             data-testid="attr1-input"
             name="cardAttr1"
@@ -51,9 +56,10 @@ export default class Form extends Component {
           />
         </label>
 
-        <label htmlFor="attr2">
-          Inteligência:
+        <label className="labels" htmlFor="attr2">
+          INTELIGÊNCIA:
           <input
+            className="input-text"
             type="number"
             data-testid="attr2-input"
             min="0"
@@ -63,9 +69,10 @@ export default class Form extends Component {
           />
         </label>
 
-        <label htmlFor="attr3">
-          Agilidade:
+        <label className="labels" htmlFor="attr3">
+          AGILIDADE:
           <input
+            className="input-text"
             type="number"
             min="0"
             data-testid="attr3-input"
@@ -75,9 +82,10 @@ export default class Form extends Component {
           />
         </label>
 
-        <label htmlFor="image">
-          Imagem:
+        <label className="labels" htmlFor="image">
+          IMAGEM:
           <input
+            className="input-text"
             type="text"
             data-testid="image-input"
             name="cardImage"
@@ -86,9 +94,10 @@ export default class Form extends Component {
           />
         </label>
 
-        <label htmlFor="input-rare">
-          Raridade
+        <label className="labels" htmlFor="input-rare">
+          RARIDADE
           <select
+            className="select"
             data-testid="rare-input"
             name="cardRare"
             value={ cardRare }
@@ -100,9 +109,10 @@ export default class Form extends Component {
           </select>
         </label>
 
-        <label htmlFor="check-box">
+        <label className="labels" htmlFor="check-box">
           Super Trybe Trunfo
           <input
+            className="super-trunfo"
             type="checkbox"
             data-testid="trunfo-input"
             name="cardTrunfo"
@@ -110,15 +120,17 @@ export default class Form extends Component {
             onChange={ onInputChange }
           />
         </label>
-
-        <button
-          type="submit"
-          data-testid="save-button"
-          disabled={ isSaveButtonDisabled }
-          onClick={ onSaveButtonClick }
-        >
-          Salvar
-        </button>
+        <div className="div-btn">
+          <button
+            className="btn-submit"
+            type="submit"
+            data-testid="save-button"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+          >
+            SALVAR
+          </button>
+        </div>
       </form>
     );
   }
@@ -136,4 +148,5 @@ Form.propTypes = {
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
+  hastrunfo: PropTypes.bool.isRequired,
 };
