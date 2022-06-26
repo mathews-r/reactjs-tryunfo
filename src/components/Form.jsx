@@ -14,7 +14,7 @@ export default class Form extends Component {
       onInputChange,
       onSaveButtonClick,
       isSaveButtonDisabled,
-      hastrunfo,
+      // hastrunfo,
     } = this.props;
 
     return (
@@ -148,5 +148,5 @@ Form.propTypes = {
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
-  hastrunfo: PropTypes.bool.isRequired,
+  // hastrunfo: PropTypes.bool.isRequired,
 };
