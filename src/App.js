@@ -22,6 +22,11 @@ class App extends React.Component {
     };
   }
 
+  verifyTrunfo = () => {
+    const { cards } = this.state;
+    this.setState({ hasTrunfo: cards.some((card) => card.cardTrunfo === true) });
+  }
+
   verifyButton = () => {
     const { cardName,
       cardDescription,
@@ -56,7 +61,6 @@ class App extends React.Component {
       isSaveButtonDisabled,
       cardTrunfo,
       hasTrunfo,
-      cards,
     } = this.state;
 
     const onInputChange = (event) => {
@@ -67,7 +71,7 @@ class App extends React.Component {
 
     const onSaveButtonClick = (event) => {
       event.preventDefault();
-      // const newCard = this.state;
+      const obj = this.state;
       this.setState((prevState) => ({
         cardName: '',
         cardDescription: '',
@@ -77,7 +81,7 @@ class App extends React.Component {
         cardAttr3: '0',
         cardRare: '',
         cardTrunfo: false,
-        cards: [...prevState.cards, cards] }));
+        cards: [...prevState.cards, obj] }), this.verifyTrunfo);
     };
 
     return (
