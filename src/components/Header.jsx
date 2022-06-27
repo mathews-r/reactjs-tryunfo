@@ -4,7 +4,7 @@ export default class Header extends Component {
   render() {
     return (
       <header className="header">
-        <h1>Dota Tryunfo</h1>
+        <h1>DOTA TRYUNFO</h1>
       </header>
     );
   }

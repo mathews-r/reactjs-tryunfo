@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from './components/Card';
+import Footer from './components/Footer';
 import Form from './components/Form';
 import Header from './components/Header';
-// import Trash from './images/trash.png';
+import Trash from './images/trash.png';
 
 class App extends React.Component {
   constructor() {
@@ -123,7 +124,7 @@ class App extends React.Component {
           <section className="deck-card">
 
             <header className="header">
-              <h1>Cartas do baralho</h1>
+              <h1>CARTAS DO BARALHO</h1>
             </header>
 
             <div className="deck-list">
@@ -148,10 +149,8 @@ class App extends React.Component {
                       data-testid="delete-button"
                       onClick={ () => this.deleteCard(card.cardName) }
                     >
-                      Excluir
-
+                      <img src={ Trash } alt="Remover" className="btn-remove" />
                     </button>
-                    {/* <button type="button" data-testid="delete-button"><img src={ Trash } alt="Remover" /></button> */}
                   </div>
 
                 </div>
@@ -160,6 +159,7 @@ class App extends React.Component {
             </div>
 
           </section>
+          <Footer />
         </section>
       </>
     );

@@ -19,6 +19,7 @@ export default class Form extends Component {
 
     return (
       <form className="form">
+        <p className="p">Crie seu baralho!</p>
         <label className="labels" htmlFor="name">
           INSIRA O NOME DA CARTA:
           <input

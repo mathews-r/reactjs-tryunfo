@@ -9,8 +9,8 @@ h1 {
 }
 
 body {
-  /* background-color: #3D94F6; */
-  background-image: url('./images/dota2.png');
+  background-color: #3D94F6;
+  /* background-image: url('./images/dota2.png'); */
 }
 
 .header, .div-header{
@@ -57,7 +57,7 @@ body {
   border: 1px solid gray;
   padding: 10px;
   height: 4px;
-  margin: 5px
+  margin: 5px;
   }
 
 .btn-submit {
@@ -95,7 +95,7 @@ body {
 }
 
 .super-trunfo {
-    margin-right: 101px;
+    margin-right: 100px;
 }
 
 .div-btn {
@@ -150,10 +150,40 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid white;
 }
 
 .deck-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn-remove {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: #3D94F6;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+}
+
+.logoredesocial {
+  width: 30px;
+  padding: 10px;
+}
+
+.logoredesocial:hover {
+  transform: scale(1.1);
+}
+
+.p {
+  text-align: center;
 }
