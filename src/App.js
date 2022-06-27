@@ -61,6 +61,7 @@ class App extends React.Component {
       isSaveButtonDisabled,
       cardTrunfo,
       hasTrunfo,
+      cards,
     } = this.state;
 
     const onInputChange = (event) => {
@@ -112,6 +113,30 @@ class App extends React.Component {
             cardRare={ cardRare }
             cardTrunfo={ cardTrunfo }
           />
+          <div className="deck-card">
+
+            <div className="div-header">
+              <h1>Cartas do baralho</h1>
+            </div>
+
+            <div className="deck-list">
+
+              {cards.map((card) => (
+                <Card
+                  key={ card.cardName }
+                  cardName={ card.cardName }
+                  cardImage={ card.cardImage }
+                  cardDescription={ card.cardDescription }
+                  cardAttr1={ card.cardAttr1 }
+                  cardAttr2={ card.cardAttr2 }
+                  cardAttr3={ card.cardAttr3 }
+                  cardRare={ card.cardRare }
+                  cardTrunfo={ card.cardTrunfo }
+                />
+              ))}
+            </div>
+
+          </div>
         </div>
       </>
     );

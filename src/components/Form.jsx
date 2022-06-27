@@ -110,7 +110,8 @@ export default class Form extends Component {
         </label>
 
         <label className="labels" htmlFor="check-box">
-          Super Trybe Trunfo
+          Super Trybe Trunfo:
+          { ' ' }
           {hasTrunfo ? 'Você já tem um Super Trunfo em seu baralho' : <input
             className="super-trunfo"
             type="checkbox"

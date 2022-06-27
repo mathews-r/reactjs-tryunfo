@@ -14,6 +14,7 @@ export default class Card extends Component {
       cardAttr3,
       cardRare,
       cardTrunfo,
+      // addNewCard,
     } = this.props;
 
     return (
@@ -97,4 +98,5 @@ Card.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
+  // addNewCard: PropTypes.func.isRequired,
 };
