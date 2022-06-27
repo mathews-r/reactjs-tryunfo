@@ -9,7 +9,8 @@ h1 {
 }
 
 body {
-  background-color: #3D94F6;
+  /* background-color: #3D94F6; */
+  background-image: url('./images/dota2.png');
 }
 
 .header, .div-header{
@@ -17,6 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .div-form {
@@ -35,6 +37,7 @@ body {
   border-radius: 6px;
   justify-content: space-between;
   padding: 15px;
+  background-color: white;
 }
 
 .div-card {

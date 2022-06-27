@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './components/Card';
 import Form from './components/Form';
 import Header from './components/Header';
+// import Trash from './images/trash.png';
 
 class App extends React.Component {
   constructor() {
@@ -50,6 +51,12 @@ class App extends React.Component {
       !(emptyInputs && valueAttr1 && valueAttr2 && valueAttr3 && sumAttrs) });
   };
 
+  deleteCard = (tag) => {
+    const { cards } = this.state;
+    const newCards = cards.filter((card) => card.cardName !== tag);
+    this.setState(({ cards: newCards }), this.verifyTrunfo);
+  };
+
   render() {
     const { cardName,
       cardDescription,
@@ -88,7 +95,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <div className="div-form">
+        <section className="div-form">
           <Form
             cardName={ cardName }
             cardDescription={ cardDescription }
@@ -113,31 +120,47 @@ class App extends React.Component {
             cardRare={ cardRare }
             cardTrunfo={ cardTrunfo }
           />
-          <div className="deck-card">
+          <section className="deck-card">
 
-            <div className="div-header">
+            <header className="header">
               <h1>Cartas do baralho</h1>
-            </div>
+            </header>
 
             <div className="deck-list">
 
               {cards.map((card) => (
-                <Card
-                  key={ card.cardName }
-                  cardName={ card.cardName }
-                  cardImage={ card.cardImage }
-                  cardDescription={ card.cardDescription }
-                  cardAttr1={ card.cardAttr1 }
-                  cardAttr2={ card.cardAttr2 }
-                  cardAttr3={ card.cardAttr3 }
-                  cardRare={ card.cardRare }
-                  cardTrunfo={ card.cardTrunfo }
-                />
+                <div key={ card.cardName }>
+                  <Card
+                    key={ card.cardName }
+                    cardName={ card.cardName }
+                    cardImage={ card.cardImage }
+                    cardDescription={ card.cardDescription }
+                    cardAttr1={ card.cardAttr1 }
+                    cardAttr2={ card.cardAttr2 }
+                    cardAttr3={ card.cardAttr3 }
+                    cardRare={ card.cardRare }
+                    cardTrunfo={ card.cardTrunfo }
+                  />
+
+                  <div className="div-btn">
+                    <button
+                      type="button"
+                      data-testid="delete-button"
+                      onClick={ () => this.deleteCard(card.cardName) }
+                    >
+                      Excluir
+
+                    </button>
+                    {/* <button type="button" data-testid="delete-button"><img src={ Trash } alt="Remover" /></button> */}
+                  </div>
+
+                </div>
               ))}
+
             </div>
 
-          </div>
-        </div>
+          </section>
+        </section>
       </>
     );
   }
