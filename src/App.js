@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Trash from './images/trash.png';
 import Filter from './components/Filter';
 import FilterRare from './components/FilterRare';
+import FilterSuperTrunfo from './components/FilterSuperTrunfo';
 
 class App extends React.Component {
   constructor() {
@@ -23,6 +24,7 @@ class App extends React.Component {
       cardTrunfo: false,
       hasTrunfo: false,
       cards: [],
+      showTrunfo: false,
     };
   }
 
@@ -72,6 +74,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       cards,
+      showTrunfo,
     } = this.state;
 
     const onInputChange = (event) => {
@@ -95,17 +98,22 @@ class App extends React.Component {
         cards: [...prevState.cards, obj] }), this.verifyTrunfo);
     };
 
-    const filterCards = ({ target }) => {
+    const filterName = ({ target }) => {
       const { value } = target;
       this.setState({ cards: cards.filter((card) => card.cardName.includes(value)) });
     };
 
     const filterRare = ({ target }) => {
       const { value } = target;
-      if (value === 'todas') {
-        this.setState({ cards });
-      } else {
-        this.setState({ cards: cards.filter((card) => card.cardRare === value) });
+      return value === 'todas' ? this.setState({ cards })
+        : this.setState({ cards: cards.filter((card) => card.cardRare === value) });
+    };
+
+    const filterTrunfo = ({ target }) => {
+      const { checked } = target;
+      this.setState({ showTrunfo: checked });
+      if (checked) {
+        this.setState({ cards: cards.filter((card) => card.cardTrunfo === true) });
       }
     };
 
@@ -142,10 +150,11 @@ class App extends React.Component {
             <header className="header">
               <h1>TODAS AS CARTAS</h1>
             </header>
-
-            <Filter func={ filterCards } />
-            <FilterRare func={ filterRare } />
-
+            <div className="filter">
+              <Filter func={ filterName } blockFilter={ showTrunfo } />
+              <FilterRare func={ filterRare } blockFilter={ showTrunfo } />
+              <FilterSuperTrunfo func={ filterTrunfo } />
+            </div>
             <div className="deck-list">
 
               {cards.map((card) => (

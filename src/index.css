@@ -193,14 +193,28 @@ body {
 
 .p {
   text-align: center;
+  color: white;
 }
 
-.filter {
+.filter-name {
   color: white;
   font-weight: 700;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 320px;
   flex-flow: row wrap;
   align-self: center;
-  border: 1px solid red;
+}
+
+.filter-st, .filter-rare {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 320px;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }

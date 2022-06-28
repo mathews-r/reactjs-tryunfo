@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 
 export default class FilterRare extends Component {
   render() {
-    const { func } = this.props;
+    const { func, blockFilter } = this.props;
     return (
-      <div>
-        <select data-testid="rare-filter" onChange={ func }>
+      <div className="filter-rare">
+        <select data-testid="rare-filter" onChange={ func } disabled={ blockFilter }>
           <option>todas</option>
           <option>normal</option>
           <option>raro</option>
@@ -19,4 +19,5 @@ export default class FilterRare extends Component {
 
 FilterRare.propTypes = {
   func: PropTypes.func.isRequired,
+  blockFilter: PropTypes.bool.isRequired,
 };

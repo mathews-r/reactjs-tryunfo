@@ -3,15 +3,16 @@ import React, { Component } from 'react';
 
 export default class Filter extends Component {
   render() {
-    const { func } = this.props;
+    const { func, blockFilter } = this.props;
     return (
-      <div className="filter">
+      <div className="filter-name">
         <p>Filtros de busca</p>
         <input
           type="text"
           data-testid="name-filter"
           placeholder="Nome da carta"
           onChange={ func }
+          disabled={ blockFilter }
         />
       </div>
     );
@@ -20,4 +21,5 @@ export default class Filter extends Component {
 
 Filter.propTypes = {
   func: PropTypes.func.isRequired,
+  blockFilter: PropTypes.bool.isRequired,
 };
