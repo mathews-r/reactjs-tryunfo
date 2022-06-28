@@ -93,6 +93,11 @@ class App extends React.Component {
         cards: [...prevState.cards, obj] }), this.verifyTrunfo);
     };
 
+    const filterCards = ({ target }) => {
+      const { value } = target;
+      this.setState({ cards: cards.filter((card) => card.cardName.includes(value)) });
+    };
+
     return (
       <>
         <Header />
@@ -128,6 +133,11 @@ class App extends React.Component {
             </header>
 
             <div className="deck-list">
+              <input
+                type="text"
+                data-testid="name-filter"
+                onChange={ filterCards }
+              />
 
               {cards.map((card) => (
                 <div key={ card.cardName }>

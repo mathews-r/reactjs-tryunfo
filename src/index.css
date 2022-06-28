@@ -4,13 +4,16 @@
   padding: 0;  
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Hind+Siliguri:wght@300;400&family=Open+Sans:wght@300&family=Poppins:wght@300&display=swap');
+
 h1 {
   text-align: center;
 }
 
 body {
-  background-color: #3D94F6;
-  /* background-image: url('./images/dota2.png'); */
+  /* background-color: #3D94F6; */
+  background-image: url('./images/bg.jpeg');
+  font-family: 'Poppins', sans-serif;
 }
 
 .header, .div-header{
@@ -37,19 +40,21 @@ body {
   border-radius: 6px;
   justify-content: space-between;
   padding: 15px;
-  background-color: white;
+  background-color: rgba(255, 254, 254, 0.62);
 }
 
 .div-card {
   display: flex;
+  color: black;
   flex-direction: column;
   width: 250px;
   align-items: center;
-  border: 5px solid black;
-  border-radius: 6px;
+  border: 5px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 5px;
   margin: 10px;
+  background-color: #a3c0e1;
 }
 
 .input-text {
@@ -69,6 +74,7 @@ body {
     width: 80px;
     font-family: Open Sans;
     font-weight: 700;
+    border: 1px solid #3D94F6;
 }
 
 .labels {
@@ -165,7 +171,6 @@ body {
   width: 25px;
   height: 25px;
   cursor: pointer;
-  background-color: #3D94F6;
 }
 
 #footer {
@@ -173,6 +178,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 240px;
+  color: white;
 }
 
 .logoredesocial {
