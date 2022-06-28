@@ -183,7 +183,7 @@ body {
 }
 
 .logoredesocial {
-  width: 30px;
+  width: 60px;
   padding: 10px;
 }
 
@@ -196,10 +196,11 @@ body {
 }
 
 .filter {
+  color: white;
+  font-weight: 700;
   display: flex;
   justify-content: center;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   align-self: center;
-  width: 10%;
   border: 1px solid red;
 }

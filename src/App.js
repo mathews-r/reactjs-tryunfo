@@ -5,6 +5,7 @@ import Form from './components/Form';
 import Header from './components/Header';
 import Trash from './images/trash.png';
 import Filter from './components/Filter';
+import FilterRare from './components/FilterRare';
 
 class App extends React.Component {
   constructor() {
@@ -99,6 +100,15 @@ class App extends React.Component {
       this.setState({ cards: cards.filter((card) => card.cardName.includes(value)) });
     };
 
+    const filterRare = ({ target }) => {
+      const { value } = target;
+      if (value === 'todas') {
+        this.setState({ cards });
+      } else {
+        this.setState({ cards: cards.filter((card) => card.cardRare === value) });
+      }
+    };
+
     return (
       <>
         <Header />
@@ -134,6 +144,7 @@ class App extends React.Component {
             </header>
 
             <Filter func={ filterCards } />
+            <FilterRare func={ filterRare } />
 
             <div className="deck-list">
 
