@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Form from './components/Form';
 import Header from './components/Header';
 import Trash from './images/trash.png';
+import Filter from './components/Filter';
 
 class App extends React.Component {
   constructor() {
@@ -129,15 +130,12 @@ class App extends React.Component {
           <section className="deck-card">
 
             <header className="header">
-              <h1>CARTAS DO BARALHO</h1>
+              <h1>TODAS AS CARTAS</h1>
             </header>
 
+            <Filter func={ filterCards } />
+
             <div className="deck-list">
-              <input
-                type="text"
-                data-testid="name-filter"
-                onChange={ filterCards }
-              />
 
               {cards.map((card) => (
                 <div key={ card.cardName }>
