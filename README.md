@@ -20,6 +20,8 @@ Jogo de cartas no estilo Super Trunfo.
 
 ## :computer: Layout Desenvolvido
 
+![image](https://user-images.githubusercontent.com/83560101/198661409-095ea8e0-11be-4417-b2f8-79e979ccdae3.png)
+
 ## 📁 Acessar Projeto Localmente
 
 - *Clonar o repositório:*
